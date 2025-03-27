@@ -26,6 +26,9 @@
       <Datepicker style="margin-inline: auto; width: fit-content;"></Datepicker>
     </div>
 
+    <hr>
+
+    <input type="date" v-model="date" />
   </div>
 </template>
 
