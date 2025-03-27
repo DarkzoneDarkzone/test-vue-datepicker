@@ -28,7 +28,7 @@
 
     <hr>
 
-    <input type="date" v-model="date" />
+    <input type="date" v-model="date1" />
   </div>
 </template>
 
@@ -50,6 +50,7 @@ export default {
   data() {
     return {
       date: new Date(),
+      date1: null,
       masks: {
         input: 'YYYY-MM-DD',
       },
