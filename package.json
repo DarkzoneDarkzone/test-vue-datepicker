@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "flatpickr": "^4.6.13",
     "v-calendar": "^2.4.2",
     "vue": "^2.6.14",
     "vue-bootstrap-datetimepicker": "^5.0.1",

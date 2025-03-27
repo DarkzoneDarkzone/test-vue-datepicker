@@ -23,12 +23,25 @@
 
     <hr>
     <div class="text-center" style="margin-inline: auto;">
+      <label for="">
+        datepicker
+      </label>
       <Datepicker style="margin-inline: auto; width: fit-content;"></Datepicker>
     </div>
 
     <hr>
 
-    <input type="date" v-model="date1" />
+    <div class="">
+      <label for="">default web</label>
+      <input type="date" v-model="date1" />
+    </div>
+
+    <hr>
+
+    <div style="width: 100px; margin-inline: auto;">
+      <label for="">flatpickr</label>
+      <input id="myID" type="text" />
+    </div>
   </div>
 </template>
 
@@ -37,6 +50,8 @@ import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 
 import Datepicker from 'vuejs-datepicker';
+
+import flatpickr from "flatpickr";
 
 export default {
   components: {
@@ -60,6 +75,10 @@ export default {
           useCurrent: false,
         } 
     }
+  },
+  mounted() {
+    console.log('ok')
+    flatpickr("#myID", {});
   }
 }
 </script>
