@@ -18,42 +18,28 @@
 
     <hr>
 
-    <v-date-picker v-model="date" :update-on-input="false">
-      <template v-slot="{ inputValue, inputEvents }">
-        <input
-          class="bg-white border px-2 py-1 rounded"
-          :value="inputValue"
-          v-on="inputEvents"
-        />
-      </template>
-    </v-date-picker>
+    <DatePicker v-model="selectedDate" format="YYYY-MM-DD" />
+    <p>Selected Date: {{ selectedDate }}</p>
 
     <hr>
+    <div class="text-center" style="margin-inline: auto;">
+      <Datepicker style="margin-inline: auto; width: fit-content;"></Datepicker>
+    </div>
 
-    <v-date-picker v-model="date" locale="th">
-      <template v-slot="{ inputValue, inputEvents }">
-        <input
-          class="bg-white border px-2 py-1 rounded"
-          :value="inputValue"
-          v-on="inputEvents"
-        />
-      </template>
-    </v-date-picker>
-
-    <v-date-picker v-model="date" :masks="masks">
-      <template v-slot="{ inputValue, inputEvents }">
-        <input
-          class="bg-white border px-2 py-1 rounded"
-          :value="inputValue"
-          v-on="inputEvents"
-        />
-      </template>
-    </v-date-picker>
   </div>
 </template>
 
 <script>
+import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
+
+import Datepicker from 'vuejs-datepicker';
+
 export default {
+  components: {
+    DatePicker,
+    Datepicker,
+  },
   name: 'HelloWorld',
   props: {
     msg: String
@@ -64,6 +50,11 @@ export default {
       masks: {
         input: 'YYYY-MM-DD',
       },
+      selectedDate: null,
+      options: {
+          format: 'DD/MM/YYYY',
+          useCurrent: false,
+        } 
     }
   }
 }
