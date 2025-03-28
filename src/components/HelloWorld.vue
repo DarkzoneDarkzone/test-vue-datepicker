@@ -56,10 +56,10 @@
           <template #default >
             <p class="my-2 mx-auto">เลือกวันที่และเวลาที่ต้องการจองโต๊ะ</p>
             <div class="w-100">
-              <v-date-picker v-model="date2" class="w-100" is-dark :rows="2" />
+              <v-date-picker v-model="date2" class="w-100" is-dark :rows="2" color="red" />
               <hr>
-              <v-date-picker v-model="date3" class="w-100 mt-3" is-dark />
-              <v-date-picker v-model="date4" class="w-100 mt-3" is-dark />
+              <v-date-picker v-model="date3" class="w-100 mt-3" is-dark color="red" />
+              <v-date-picker v-model="date4" class="w-100 mt-3" is-dark color="red" />
             </div>
           </template>
         </b-modal>
@@ -111,20 +111,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.modal-dialog {
-  max-width: 100%;
-  margin: 0 !important;
-  border: 0;
-  min-height: 100dvh;
-  border-radius: 0 !important;
+.modal-title {
+  text-transform: uppercase;
 }
-
-.modal-content {
-  border: 0;
-  border-radius: 0;
-  min-height: 100dvh;
-  border: 0 !important;
-  border-radius: 0 !important;
+@media screen and (max-width: 450px) {
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0 !important;
+    border: 0;
+    min-height: 100dvh;
+    border-radius: 0 !important;
+  }
+  
+  .modal-content {
+    border: 0;
+    border-radius: 0;
+    min-height: 100dvh;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
 }
 
 h3 {
