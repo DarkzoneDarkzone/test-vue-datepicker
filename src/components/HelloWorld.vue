@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello pb-5">
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -42,6 +42,29 @@
       <label for="">flatpickr</label>
       <input id="myID" type="text" />
     </div>
+
+    <hr>
+
+    <div>
+      <label for="">date picker mobile</label>
+      <div class="">
+      <input type="text" :value="setDate" @click="$bvModal.show('modal-1')" readonly placeholder="Y-m-d" />
+      <!-- <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
+      </div>
+      <div class="">
+        <b-modal id="modal-1" title="select date" body-class="p-1 text-center" scrollable>
+          <template #default >
+            <p class="my-2 mx-auto">เลือกวันที่และเวลาที่ต้องการจองโต๊ะ</p>
+            <div class="w-100">
+              <v-date-picker v-model="date2" class="w-100" is-dark :rows="2" />
+              <hr>
+              <v-date-picker v-model="date3" class="w-100 mt-3" is-dark />
+              <v-date-picker v-model="date4" class="w-100 mt-3" is-dark />
+            </div>
+          </template>
+        </b-modal>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -65,7 +88,10 @@ export default {
   data() {
     return {
       date: new Date(),
-      date1: null,
+      date1: new Date(),
+      date2: new Date(),
+      date3: new Date(),
+      date4: new Date(),
       masks: {
         input: 'YYYY-MM-DD',
       },
@@ -84,7 +110,23 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+.modal-dialog {
+  max-width: 100%;
+  margin: 0 !important;
+  border: 0;
+  min-height: 100dvh;
+  border-radius: 0 !important;
+}
+
+.modal-content {
+  border: 0;
+  border-radius: 0;
+  min-height: 100dvh;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
 h3 {
   margin: 40px 0 0;
 }
